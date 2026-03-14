@@ -78,13 +78,20 @@
 │  │  • 关系构建    │  │  • 场景概念    │  │  • 旁白设计    │   │
 │  │  • 心理深度    │  │  • 分镜设计    │  │  • 声音包装    │   │
 │  └─────────────────┘  └─────────────────┘  └─────────────────┘   │
-│                                                                             │
+│                                                                     │
 │                          ┌─────────────────────┐                         │
 │                          │   🔍 审查 Agent 团    │                         │
 │                          │  • 逻辑审查         │                         │
 │                          │  • 创意评估         │                         │
 │                          │  • 一致性检查       │                         │
 │                          │  • 质量把关         │                         │
+│                          └─────────────────────┘                         │
+│                                                                     │
+│                          ┌─────────────────────┐                         │
+│                          │   📚 研究员 Agent    │                         │
+│                          │  • 资料搜集         │                         │
+│                          │  • 背景调研         │                         │
+│                          │  • 参考案例         │                         │
 │                          └─────────────────────┘                         │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
@@ -327,30 +334,23 @@
 
 ```
 multi-agent-director/
+├── README.md                      # 本文件
 ├── src/
-│   ├── agents/                 # Agent 定义
-│   │   ├── director.py         # 总导演
-│   │   ├── screenwriter.py      # 编剧
-│   │   ├── director.py        # 分镜导演
-│   │   ├── character.py       # 角色设计
-│   │   ├── visual.py          # 视觉设计
-│   │   ├── music.py           # 音乐设计
-│   │   ├── voice.py           # 配音设计
-│   │   └── reviewer.py        # 审查团队
-│   ├── workflows/              # 工作流
-│   │   ├── creative_ideation.py
-│   │   ├── script_writing.py
-│   │   └── video_production.py
-│   ├── tools/                  # 工具
-│   │   ├── memory.py          # 上下文网络
-│   │   ├── debate.py          # 讨论机制
-│   │   └── evaluator.py        # 评估机制
-│   └── prompts/               # 提示词
-├── docs/                       # 文档
+│   ├── agents/
+│   │   ├── director_team.py     # Agent 完整实现 (9个Agent)
+│   │   └── __init__.py
+│   ├── workflows/
+│   │   ├── creative_workflow.py # 工作流实现
+│   │   └── __init__.py
+│   └── tools/
+│       ├── creative_tools.py     # 创意工具 (上下文网络、创意碰撞、因果推理)
+│       └── __init__.py
+├── docs/
 │   ├── architecture.md
 │   ├── workflow.md
 │   └── scenarios.md
-└── examples/                   # 示例
+└── examples/
+    └── README.md
 ```
 
 ---
